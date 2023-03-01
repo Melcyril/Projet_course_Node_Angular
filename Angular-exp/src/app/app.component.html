@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Angular APP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" (click)="gotoCoursesList()">Accueil</a>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+  </nav>
+
+<!--<h1 class="text-center" my-5> my-5  marge en haut et en bas
+    Liste des cours
+</h1>-->
+
+<router-outlet></router-outlet>
+<!--
+<div class="container">
+    <input #input (keyup)="0" type="text">
+    <p>{{input.value}}</p>
+</div>
+-->
+
+   <!--
+    idem
+    <p>{{coursesList[0].title}}</p>
+   <p>{{coursesList[1].title}}</p>
+   <p>{{coursesList[2].title}}</p>
+   <p>{{coursesList[3].title}}</p>
+   <p>{{coursesList[4].title}}</p>
+   <p>{{coursesList[5].title}}</p>
+   <p>{{coursesList[6].title}}</p>
+   <p>{{coursesList[7].title}}</p>
+   <p>{{coursesList[8].title}}</p>
+   <p>{{coursesList[9].title}}</p>
+   <p>{{coursesList[10].title}}</p>
+   <p>{{coursesList[11].title}}</p>
+
+   <div [ngSwitch]="expression">
+        <p *ngSwitchCase="test1"></p>
+        <p *ngSwitchDefault></p>
+   </div>
+-->

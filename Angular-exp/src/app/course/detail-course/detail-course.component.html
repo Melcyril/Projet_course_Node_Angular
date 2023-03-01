@@ -1,0 +1,46 @@
+<h1 class="text-center my-5">Détail du cours</h1>
+<div class="container">
+    <div *ngIf="course" class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="https://nzxt.com/assets/cms/34299/1659681297-streaming-pc-cta-primary.png?auto=format&fit=max&h=900&w=672" class="card-img" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h3 class="card-title mb-2">{{course.title}}</h3>
+              
+              <p class="card-text mb-3">{{course.content}}</p>
+              <table class="table table-striped">
+
+                <tbody>
+                  <tr>
+                    <th>Nom :</th>
+                    <td>{{course.title}}</td>
+                  </tr>
+                  <tr>
+                    <th>Date de création</th>
+                    <td>{{course.createdAt| date:'d MMMM Y'}}</td>
+                  </tr>
+                  <tr>
+                    <th>Matière</th>
+                    <td>{{course.discipline}}</td>
+                  </tr>
+                  <tr>
+                    <th>Auteur :</th>
+                    <td>{{course.author}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a class="btn btn-danger" (click)="retour()">Retour</a>
+              <a class="btn btn-danger" (click)="goToCourseEdit(course)">Modifier</a>
+              <!--Pipe ->{{course.createdAt | date:"d MMMM Y" | uppercase}}-->
+              <!--<p class="card-text"><small class="text-muted">{{course.createdAt | date:"d MMMM Y" | uppercase}}</small></p>-->
+            </div>
+          </div>
+        </div>
+        </div>
+      <div *ngIf="!course" class="bg-secondary p-3 text-center rounded">
+        <h3 class="text-danger">Aucun cours n'a été trouvé</h3>
+    </div>
+
+    </div>

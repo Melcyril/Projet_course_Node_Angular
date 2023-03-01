@@ -1,0 +1,23 @@
+<h1 class="text-center my-5">Liste de courses</h1>
+<div class="container">
+  <!--(click)="selectedCourse(course)"-->
+    <div *ngFor="let course of coursesList" class="card mb-3" (click)="goToDetailCourse(course.id)" appCourseBorderCard appBoxShadowCard>
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="https://nzxt.com/assets/cms/34299/1659681297-streaming-pc-cta-primary.png?auto=format&fit=max&h=900&w=672" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{course.title}}</h5>
+              <span class="{{course.discipline | courseDisciplineColor}}">{{course.discipline}}</span>
+              <p class="card-text">{{course.content}}</p>
+              <!--Pipe ->{{course.createdAt | date:"d MMMM Y" | uppercase}}-->
+              <p class="card-text"><small class="text-muted">{{course.createdAt | date:"d MMMM Y" | uppercase}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <P *ngFor="let course of coursesList">
+        {{course.title}}
+    </P>

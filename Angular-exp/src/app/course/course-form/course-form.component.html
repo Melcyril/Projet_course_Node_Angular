@@ -1,0 +1,49 @@
+<form *ngIf="course" (ngSubmit)="onSubmit()" #courseForm="ngForm">
+ 
+        <!-- Title -->
+        <div class="mb-3">
+            <label for="title" class="form-label">Titre du cours</label>
+            <input type="text" class="form-control" id="title" 
+                    required
+                    pattern="^[a-zA-Z0-9àéèç\s:]{1,25}$"
+                    [(ngModel)]="course.title" name="title"
+                    #title="ngModel">
+     
+            <div [hidden]="title.valid || title.pristine" 
+                    class="form-text">
+                    Le nom du cours est requis (1-25).
+            </div>
+        </div>
+     
+        <!-- Course discipline -->
+        <form class="form-group">
+            <label for="disciplines">Les disciplines</label>
+            <p *ngFor="let discipline of disciplineList">
+            <label>
+                <input type="checkbox"
+                class="filled-in"
+                id="{{ discipline }}"
+                [value]="discipline"
+                [checked]="hasDiscipline(discipline)"
+                [disabled]="!isDisciplineValid(discipline)"
+                (change)="selectDiscipline($event, discipline)"/>
+                <span [attr.for]="discipline">
+                <div class="{{ discipline | courseDisciplineColor }}">
+                    {{ discipline }}
+                </div>
+                </span>
+            </label>
+            </p>
+        </form>
+     
+        <!-- Submit button -->
+        <hr />
+        <div class="text-center">
+            <button type="submit"
+                class="btn btn-primary"
+                [disabled]="!courseForm.form.valid">
+                Valider</button>
+        </div>
+     
+    </form>
+    <h3 *ngIf="!course" class="center">Aucun cours à éditer...</h3>
